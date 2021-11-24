@@ -32,7 +32,7 @@ public class Animal {
 	
 	@Override
 	public String toString() {
-		String cadena = "Mi nombre es " + nombre + ", tengo una edad " + edad + ", habito en " + habitat  + " y mi genero es " + genero;
+		String cadena = "Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat  + " y mi genero es " + genero;
 	    if (zona != null) {
 	    	cadena = cadena + ", la zona en la que me ubico es " + zona + ", en el" + zona.getZoo().getNombre();
 	    	return cadena;
@@ -41,7 +41,7 @@ public class Animal {
 	    }
 	}
 	
-	static public void setTotalAnimale(int total) {
+	static public void setTotalAnimales(int total) {
 		totalAnimales = total;
 	}
 	

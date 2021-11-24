@@ -6,7 +6,7 @@ public class Zoologico {
 	
 	private String nombre;
 	private String ubicacion;
-	private ArrayList<Zona> zonas;
+	private ArrayList<Zona> zonas = new ArrayList<Zona>();
 	
 	public Zoologico() {
 		
@@ -19,10 +19,15 @@ public class Zoologico {
 	
 	public void agregarZonas(Zona zona) {
 		zonas.add(zona);
+		zona.setZoo(this);
 	}
 	
 	public int cantidadTotalAnimales() {
-		return Animal.getTotalAnimales();
+		int a = 0;
+		for (int i = 0; i < zonas.size(); i++) {
+			a = a + zonas.get(i).cantidadAnimales();
+		}
+		return a;
 	}
 	
 	public void setNombre(String nombre) {

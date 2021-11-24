@@ -9,7 +9,7 @@ public class Mamifero extends Animal{
 	private String habitat;
 	private String genero;
 	private Zona zona;
-	static private ArrayList<Mamifero> listado;
+	static private ArrayList<Mamifero> listado = new ArrayList<Mamifero>();
 	static public int caballos;
 	static public int leones;
 	private boolean pelaje;
@@ -17,7 +17,7 @@ public class Mamifero extends Animal{
 	
 	public Mamifero() {
 		listado.add(this);
-		Animal.setTotalAnimale(Animal.getTotalAnimales() + 1);
+		Animal.setTotalAnimales(Animal.getTotalAnimales() + 1);
 	}
 	
 	public Mamifero(String nombre, int edad, String habitat, String genero, boolean pelaje, int patas) {
@@ -28,11 +28,22 @@ public class Mamifero extends Animal{
 		this.pelaje= pelaje;
 		this.patas= patas;
 		listado.add(this);
-		Animal.setTotalAnimale(Animal.getTotalAnimales() + 1);
+		Animal.setTotalAnimales(Animal.getTotalAnimales() + 1);
 	}
 	
 	static public int cantidadMamiferos(){
-		return listado.size();
+		return listado.size() + 1 ;
+	}
+	
+	@Override
+	public String toString() {
+		String cadena = "Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat  + " y mi genero es " + genero;
+	    if (zona != null) {
+	    	cadena = cadena + ", la zona en la que me ubico es " + zona + ", en el" + zona.getZoo().getNombre();
+	    	return cadena;
+	    }else {
+	    	return cadena;
+	    }
 	}
 	
 	static public Mamifero crearCaballo(String nombre, int edad, String genero) {
@@ -69,6 +80,49 @@ public class Mamifero extends Animal{
 	
 	public int getPatas() {
 		return patas;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;	
+	}
+	
+	public String getNombre() {
+		return this.nombre;
+	}
+	
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+	
+	public int getEdad() {
+		return edad;
+	}
+	
+	public void setHabitat(String habitat) {
+		this.habitat = habitat;
+	}
+	
+	public String getHabitat() {
+		return habitat;
+	}
+	
+	public void setGenero(String genero) {
+		if (genero.equals("F") || genero.equals("M")) {
+			this.genero = genero;
+		}else {
+			
+		}
+	}
+	
+	public String getGenero() {
+		return genero;
+	}
+	
+	public void setZona(Zona zona) {
+		this.zona = zona;
+	}
+	
+	public Zona getZona() {
+		return zona;
 	}
 	
 	

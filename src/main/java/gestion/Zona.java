@@ -6,9 +6,12 @@ public class Zona {
 	
 	String nombre;
 	Zoologico zoo;
-	ArrayList<Animal> animales;
+	ArrayList<Animal> animales = new ArrayList<Animal>();
 	
 	public Zona() {
+		//nombre= "ola";
+		//zoo= null;
+		
 		
 	}
 	
