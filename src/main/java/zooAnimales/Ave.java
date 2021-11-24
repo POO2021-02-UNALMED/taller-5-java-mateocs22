@@ -38,14 +38,24 @@ public class Ave extends Animal {
 		return "volar";
 	}
 	
-	public void crearHalcon(String nombre, int edad, String genero) {
-		new Ave(nombre, edad, "montanas", genero, "cafe glorioso");
+	static public Ave crearHalcon(String nombre, int edad, String genero) {
 		Ave.halcones++ ;
+		return new Ave(nombre, edad, "montanas", genero, "cafe glorioso");
+		
 	}
 	
-	public void crearAguila(String nombre, int edad, String genero) {
-		new Ave(nombre, edad, "montanas", genero, "blanco y amarillo");
+	static public Ave crearAguila(String nombre, int edad, String genero) {
 		Ave.aguilas++;
+		return new Ave(nombre, edad, "montanas", genero, "blanco y amarillo");
+		
+	}
+	
+	public void setListado(ArrayList<Ave> listado) {
+		Ave.listado = listado;
+	}
+	
+	public ArrayList<Ave> getListado(){
+		return Ave.listado;
 	}
 	
 	public void setColorPlumas(String colorPlumas) {

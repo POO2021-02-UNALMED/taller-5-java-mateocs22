@@ -42,15 +42,26 @@ public class Reptil extends Animal {
 		return "reptar";
 	}
 	
-	public void crearIguana(String nombre, int edad, String genero) {
-		new Reptil(nombre, edad, "humedal", genero, "verde", 3);
+	static public Reptil crearIguana(String nombre, int edad, String genero) {
 		Reptil.iguanas++ ;
+		return new Reptil(nombre, edad, "humedal", genero, "verde", 3);
+		
 	}
 	
-	public void crearSerpiente(String nombre, int edad, String genero) {
-		new Reptil(nombre, edad, "jungla", genero, "blanco", 1);
+	static public Reptil crearSerpiente(String nombre, int edad, String genero) {
 		Reptil.serpientes++ ;
+		return new Reptil(nombre, edad, "jungla", genero, "blanco", 1);
+		
 	}
+	
+	public void setListado(ArrayList<Reptil> listado) {
+		Reptil.listado = listado;
+	}
+	
+	public ArrayList<Reptil> getListado(){
+		return Reptil.listado;
+	}
+	
 	
 	public void setColorEscamas(String colorEscamas) {
 		this.colorEscamas = colorEscamas;
