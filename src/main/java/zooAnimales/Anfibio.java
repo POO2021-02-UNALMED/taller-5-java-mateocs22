@@ -34,7 +34,7 @@ public class Anfibio extends Animal {
 	}
 	
 	static public int cantidadAnfibios(){
-		return listado.size() + 1;
+		return listado.size();
 	}
 	
 	@Override

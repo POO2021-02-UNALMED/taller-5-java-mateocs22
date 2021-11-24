@@ -32,7 +32,7 @@ public class Mamifero extends Animal{
 	}
 	
 	static public int cantidadMamiferos(){
-		return listado.size() + 1 ;
+		return listado.size()  ;
 	}
 	
 	@Override
